@@ -1,6 +1,6 @@
 # t0sic_loadingbar
 
-Hello I decided to release my loadingabar. It's simple to use and nice
+Hello I decided to release my loadingbar. It's simple to use and nice
 
 ### LICENSE
 

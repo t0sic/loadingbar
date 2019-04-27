@@ -1,15 +1,36 @@
 # t0sic_loadingbar
 
-Hello I decided to release my loadingbar. It's simple to use and nice
+### Features
+- A loadingbar that will execute a callback after a certain amount of time.
 
-### LICENSE
+## Download & Installation
 
-You are free to remake this however you wan't, however do not reupload it and do not sell it.
+### Using Git
+```
+cd resources
+git clone https://github.com/qalle-fivem/t0sic_loadingbar
+```
 
-### INSTALATION
+### Manually
+- Download from this.
 
-Simply drag and drop it in your resource folder and add it to your sever cfg. You can use it in any script by typing in, in any client file
+## Installation
+- Add this to your `server.cfg`:
 
-exports['t0sic_loadingbar']:loadingbar('Your text', 5000)
+```
+start t0sic_loadingbar
+```
 
-5000 is your time for the loadingbar to complete
+## Example
+
+* This will make a progressbar with the title ``Taking bandage...`` and it will execute ``SetEntityHealth`` after ``10000ms``
+
+```lua
+    exports["t0sic_loadingbar"]:StartDelayedFunction("Taking bandage...", 10000, function()
+        SetEntityHealth(PlayerPedId(), GetPedMaxHealth(PlayerPedId()))
+    end)
+```
+
+![Loadingbar](https://godhatesfags.church/dCiAZiBoMpZRfVx.png)
+
+

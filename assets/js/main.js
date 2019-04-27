@@ -12,7 +12,7 @@ window.addEventListener('message', function(event) {
             })
             $('.overlay').fadeOut()
 
-            emit_client_event("t0sic_progressbar:delayedFunctionComplete", loadingInformation)
+            emit_client_event("delayed_function_complete", loadingInformation)
         })
     }
 
@@ -22,6 +22,6 @@ window.addEventListener('message', function(event) {
             data: data
         }
     
-        $.post("http://t0sic_progressbar/event_handler", JSON.stringify(pipe))
+        $.post("http://t0sic_loadingbar/event_handler", JSON.stringify(pipe))
     }
 });

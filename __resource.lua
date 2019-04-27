@@ -11,5 +11,5 @@ files {
 }
 
 exports {
-    'loadingbar'
+    'StartDelayedFunction'
 }

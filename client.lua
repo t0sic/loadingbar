@@ -1,13 +1,12 @@
 local Cooldowns = {}
 
-RegisterNUICallback("event_handler", callback)
-
-RegisterNetEvent("t0sic_progressbar:delayedFunctionComplete")
-AddEventHandler("t0sic_progressbar:delayedFunctionComplete", function(data)
-    if Cooldowns[data["id"]] then
-        Cooldowns[data["id"]]["data"]["cb"]()
-
-        Cooldowns[data["id"]] = nil
+RegisterNUICallback("event_handler", function(data)
+    if data["event"] == "delayed_function_complete" then
+        if Cooldowns[data["data"]["id"]] then
+            Cooldowns[data["data"]["id"]]["data"]["cb"]()
+    
+            Cooldowns[data["data"]["id"]] = nil
+        end
     end
 end)
 
@@ -57,8 +56,8 @@ GenerateUniqueId = function()
     end)
 end
 
-RegisterCommand("takebandage", function()
-    StartDelayedFunction("Dödar sig själv", 10000, function(data)
-        SetEntityHealth(PlayerPedId(), 0)
+RegisterCommand("example", function()
+    StartDelayedFunction("This is an example...", 5000, function()
+        print("The delayed function is now completed.")
     end)
 end)
